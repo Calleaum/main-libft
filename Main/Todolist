@@ -1,50 +1,50 @@
-• isalpha    ok     libft ok    main ok
-• isdigit    ok     libft ok    main ok
-• isalnum    ok     libft ok    main ok
-• isascii    ok     libft ok    main ok
-• isprint    ok     libft ok    main ok
-• strlen     ok     libft ok    main ok
-• memset     ok     libft ok    main ok
-• bzero      ok     libft ok    main ok
-• memcpy     ok     libft ok    main ok
-• memmove    ok     libft ok    main ok
-• strlcpy    ok     libft ok    main ok
-• strlcat    ok     libft ok    main ok
-• toupper    ok     libft ok    main ok
-• tolower    ok     libft ok    main ok
-• strchr     ok     libft ok    main ok
-• strrchr    ok     libft ok    main ok
-• strncmp    ok     libft ok    main ok
-• memchr     ok     libft ok    main ok
-• memcmp     ok     libft ok    main ok
-• strnstr    ok     libft ok    main ok
-• atoi       ok     libft ok    main ok
-
+• isalpha    ok     libft ok    main ok                    ok
+• isdigit    ok     libft ok    main ok                   ok
+• isalnum    ok     libft ok    main ok                   ok
+• isascii    ok     libft ok    main ok                   ok
+• isprint    ok     libft ok    main ok                   ok
+• strlen     ok     libft ok    main ok                   ok
+• memset     ok     libft ok    main ok                   ok
+• bzero      ok     libft ok    main ok                   ok
+• memcpy     ok     libft ok    main ok                   ok
+• memmove    ok     libft ok    main ok                   ok
+• strlcpy    ok     libft ok    main ok                   ok
+• strlcat    ok     libft ok    main ok                   ok
+• toupper    ok     libft ok    main ok                   ok
+• tolower    ok     libft ok    main ok                   ok
+• strchr     ok     libft ok    main ok                   ok
+• strrchr    ok     libft ok    main ok                   ok
+• strncmp    ok     libft ok    main ok                   ok
+• memchr     ok     libft ok    main ok                   ok
+• memcmp     ok     libft ok    main ok                   ok
+• strnstr    ok     libft ok    main ok                   ok
+• atoi       ok     libft ok    main ok                   ok
+strdup
 Pour les deux fonctions suivantes, vous pourrez faire appel à la fonction malloc() :
-• calloc     ok  libft ok       main ok
-• strdup     ok  libft ok       main ok
+• calloc     ok  libft ok       main ok   23 + 11 + 9 = 43 + 2 45        ok
+• strdup     ok  libft ok       main ok                                  ok
 
 
-ft_substr      ok  libft ok     main ok
-ft_strjoin     ok  libft ok     main ok
-ft_strtrim     ok  libft ok     main ok
-ft_split       ok  libft ok	    main ok
-ft_itoa        ok  libft ok		main ok
-ft_strmapi     ok  libft ok		main ok
-ft_striteri    ok  libft ok		main ok
-ft_putchar_fd  ok  libft ok		main ok
-ft_putstr_fd   ok  libft ok	    main ok
-ft_putendl_fd  ok  libft ok		main ok
-ft_putnbr_fd   ok  libft ok		main ok
+ft_substr      ok  libft ok     main ok                       ok
+ft_strjoin     ok  libft ok     main ok                       ok
+ft_strtrim     ok  libft ok     main ok                       ok
+ft_split       ok  libft ok	    main ok                   ok
+ft_itoa        ok  libft ok		main ok               ok
+ft_strmapi     ok  libft ok		main ok               ok
+ft_striteri    ok  libft ok		main ok               ok 
+ft_putchar_fd  ok  libft ok		main ok               ok
+ft_putstr_fd   ok  libft ok	    main ok                   ok
+ft_putendl_fd  ok  libft ok		main ok               ok
+ft_putnbr_fd   ok  libft ok		main ok               ok
 
 BONUS
 
-ft_lst_new         ok                               libft ok	main ok
-ft_lstadd_front    ok                               libft ok	main ok
-ft_lstsize         ok                               libft ok	main ok
-ft_lstlast         ok                               libft ok	main ok
-ft_ladt_add_back   ok                               libft ok	main ok
-ft_lstdelone       ok                               libft ok	main ok
-ft_lstclear        ok                               libft ok	main ok
-ft_lstiter         ok                               libft ok	main ok
-ft_lstmap          erreur compil paco 1er test      libft ok	main ok
+ft_lst_new         ok                               libft ok	main ok           ok
+ft_lstadd_front    ok                               libft ok	main ok           ok
+ft_lstsize         ok                               libft ok	main ok           ok
+ft_lstlast         ok                               libft ok	main ok           ok
+ft_ladt_add_back   ok                               libft ok	main ok           ok
+ft_lstdelone       ok                               libft ok	main ok           ok
+ft_lstclear        ok                               libft ok	main ok           ok
+ft_lstiter         ok                               libft ok	main ok           ok
+ft_lstmap          erreur compil paco 1er test      libft ok	main ok           ok

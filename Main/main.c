@@ -6,11 +6,14 @@
 /*   By: calleaum <calleaum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:56:41 by calleaum          #+#    #+#             */
-/*   Updated: 2024/10/26 12:50:37 by calleaum         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:18:08 by calleaum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <ctype.h>
+#include <string.h>
+# include <stdio.h>
 
 //*************************************** ISALPHA *************************************//
 
@@ -23,6 +26,9 @@
 //     printf("%c est %d\n", char1, ft_isalpha(char1));
 //     printf("%c est %d\n", char2, ft_isalpha(char2));
 //     printf("%c est %d\n", char3, ft_isalpha(char3));
+//     printf("%c est %d\n", char1, isalpha(char1));
+//     printf("%c est %d\n", char2, isalpha(char2));
+//     printf("%c est %d\n", char3, isalpha(char3));
 
 //     return 0;
 // }
@@ -38,6 +44,9 @@
 //     printf("%c est %d\n", char1, ft_isdigit(char1));
 //     printf("%c est %d\n", char2, ft_isdigit(char2));
 //     printf("%c est %d\n", char3, ft_isdigit(char3));
+//     printf("%c est %d\n", char1, isdigit(char1));
+//     printf("%c est %d\n", char2, isdigit(char2));
+//     printf("%c est %d\n", char3, isdigit(char3));
 
 //     return 0;
 // }
@@ -53,6 +62,9 @@
 //     printf("%c est %d\n", char1, ft_isalnum(char1));
 //     printf("%c est %d\n", char2, ft_isalnum(char2));
 //     printf("%c est %d\n", char3, ft_isalnum(char3));
+//     printf("%c est %d\n", char1, isalnum(char1));
+//     printf("%c est %d\n", char2, isalnum(char2));
+//     printf("%c est %d\n", char3, isalnum(char3));
 
 //     return 0;
 // }
@@ -68,6 +80,9 @@
 //     printf("%d : %d\n", char1, ft_isascii(char1));
 //     printf("%d : %d\n", char2, ft_isascii(char2));
 //     printf("%d : %d\n", char3, ft_isascii(char3));
+//     printf("%d : %d\n", char1, isascii(char1));
+//     printf("%d : %d\n", char2, isascii(char2));
+//     printf("%d : %d\n", char3, isascii(char3));
 
 //     return 0;
 // }
@@ -83,6 +98,9 @@
 //     printf("%d : %d\n", char_1, ft_isprint(char_1));
 //     printf("%d : %d\n", char_2, ft_isprint(char_2));
 //     printf("%d : %d\n", char_3, ft_isprint(char_3));
+//     printf("%d : %d\n", char_1, isprint(char_1));
+//     printf("%d : %d\n", char_2, isprint(char_2));
+//     printf("%d : %d\n", char_3, isprint(char_3));
 
 //     return 0;
 // }
@@ -92,9 +110,12 @@
 // int main(void)
 // {
 // 	int	i;
+// 	int j;
 // 	char	c[50] = "coufsdfsdfsdfdFAFdsfcou";
 // 	i = ft_strlen(c);
-// 	printf("%d", i);
+// 	j = strlen(c);
+// 	printf("%d\n", i);
+// 	printf("%d\n", j);
 // }
 
 //*************************************** MEMSET **************************************//
@@ -106,20 +127,33 @@
 //     buffer[20] = '\0';
 //     printf("apres ft_memset: %s\n", buffer);
 //     printf("\n");
-//     return 0;
+
+//     char buffer1[200];
+//     memset(buffer1, 'A', 100);
+//     buffer1[20] = '\0';
+//     printf("apres memset: %s\n", buffer1);
+//     printf("\n");
+
 // }
 
 //*************************************** BZERO ***************************************//
 
 // int main()
 // {
-//     char str[10] = "Hello";
+//     char str[10] = "COUCOU";
+// 	char str1[10] = "COUCOU";
 
 //     ft_bzero(str, 3);
 
 //     printf("%d %d %d %d %d %d %d %d %d %d\n", 
 //            str[0], str[1], str[2], str[3], str[4], 
 //            str[5], str[6], str[7], str[8], str[9]);
+		   
+// 	bzero(str1, 3);
+
+//     printf("%d %d %d %d %d %d %d %d %d %d\n", 
+//            str1[0], str1[1], str1[2], str1[3], str1[4], 
+//            str1[5], str1[6], str1[7], str1[8], str1[9]);
 
 //     return 0;
 // }
@@ -133,7 +167,13 @@
 
 //     ft_memcpy(dst, src, 8);
 //     printf("%s\n", dst);
-//     return 0;
+
+// 	char src1[] = "Pwet pouet";
+//     char dst1[10];
+
+// 	memcpy(dst1, src1, 8);
+//     printf("%s\n", dst1);
+      
 // }
 
 //*************************************** MEMMOVE *************************************//
@@ -142,7 +182,7 @@
 // {
 // 	char str[] = "coucou";
 // 	ft_memmove(str + 2, str, 3);
-// 	printf("%s", str);
+// 	printf("%s\n", str);
 
 // 	char str1[] = "coucou";
 // 	memmove(str1 + 2, str1, 3);
@@ -150,29 +190,34 @@
 // }
 
 //*************************************** STRLCPY *************************************//
-
+// #include <string.h>
 // int main()
 // {
-//     char src[] = "Hello, World!";
-//     char dst[20];
+//     char src[] = "Je test mon programme";
+//     char dst[30];
 //     size_t len = ft_strlcpy(dst, src, sizeof(dst));
 
-//     printf("Destination: %s\n", dst);
-//     printf("Length of source: %zu\n", len);
-//     return 0;
+//     printf("Dst: %s\n", dst);
+//     printf("Longueur source: %zu\n", len);
 // }
 
 //*************************************** STRLCAT *************************************//
 
 // int main()
 // {
-//     char dest[20] = "Hello";
-//     char src[] = " World!";
+//     char dest[20] = "Je test";
+//     char src[] = " mon programme";
 //     size_t len = ft_strlcat(dest, src, sizeof(dest));
 
 //     printf("res: %s\n", dest);
-//     printf("Total Length: %zu\n", len);
-//     return 0;
+//     printf("Length: %zu\n", len);
+    
+// 	char dest1[20] = "Je test";
+//     char src1[] = " mon programme";
+//     size_t len1 = ft_strlcat(dest1, src1, sizeof(dest1));
+
+//     printf("res: %s\n", dest1);
+//     printf("Length: %zu\n", len1);
 // }
 
 //*************************************** TOUPPER *************************************//
@@ -184,7 +229,10 @@
 
 //     printf("min: %c, MAJ: %c\n", lower, upper);
 
-//     return 0;
+// 	char lower1 = 'g';
+//     char upper1 = ft_toupper(lower1);
+
+//     printf("min: %c, MAJ: %c\n", lower1, upper1);
 // }
 
 //*************************************** TOULOWER ************************************//
@@ -196,64 +244,86 @@
 
 //     printf("MAJ: %c, min: %c\n", upper, lower);
 
-//     return 0;
+//     char upper1 = 'A';
+//     char lower1 = ft_tolower(upper1);
+
+//     printf("MAJ: %c, min: %c\n", upper1, lower1);
 // }
 
 //*************************************** STRCHR **************************************//
 
-// int main() {
+// int main() 
+// {
 //     const char *str = "pwet pouet pouet pwet";
 //     char ch = 'o';
+// 	char *res_strrchr = strrchr(str, ch);
 
-//     char *res = ft_strrchr(str, ch);
+//     if (res_strrchr != NULL) 
+//         printf("strrchr : Dernier caractère '%c' trouvé à la position : %ld\n", ch, res_strrchr - str);
+//     else 
+//         printf("strrchr : Le caractère '%c' n'a pas été trouvé.\n", ch);
 
-//     if (res != NULL) {
-//         printf("Dernier caractère '%c' position: %ld", ch, res - str);
-//     } else {
+//     char *res_ft_strrchr = ft_strrchr(str, ch);
+//     if (res_ft_strrchr != NULL) 
+//         printf("Dernier caractère '%c' trouvé à la position : %ld\n", ch, res_ft_strrchr - str);
+//     else 
 //         printf("Le caractère '%c' n'a pas été trouvé.\n", ch);
-//     }
-//     return 0;
 // }
 
 //*************************************** STRNCMP *************************************//
 
-// int main()
-// {
+// int main() {
 //     const char *str = "pwet pouet pwet";
 //     int c = 'p';
 //     const char *str1 = "Coucou";
 //     int d = 'p';
 
-//     char *res = ft_strrchr(str, c);
-//     char *res1 = ft_strrchr(str1, d);
+//     char *res_strrchr = strrchr(str, c);
+//     char *res_ft_strrchr = ft_strrchr(str, c);
 
-//     if (res)
-//         printf("Derniere occurence p '%c': %s\n", c, res);
+//     if (res_strrchr)
+//         printf("strrchr : Derniere occurence '%c': %s\n", c, res_strrchr);
 //     else
-//         printf("Character '%c' not found.\n", c);
-
-//     if (res1)
-//         printf("Derniere occurence p '%c': %s\n", d, res1);
+//         printf("strrchr : Caractere '%c' non trouve.\n", c);
+//     if (res_ft_strrchr)
+//         printf("ft_strrchr : Derniere occurence '%c': %s\n", c, res_ft_strrchr);
 //     else
-//         printf("Pas de caractere '%c'.\n", d);
+//         printf("ft_strrchr : Caractere '%c' non trouve.\n", c);
 
-//     return 0;
+//     char *res_strrchr1 = strrchr(str1, d);
+//     char *res_ft_strrchr1 = ft_strrchr(str1, d);
+
+//     if (res_strrchr1)
+//         printf("strrchr : Derniere occurence '%c': %s\n", d, res_strrchr1);
+//     else
+//         printf("strrchr : Pas de caractere '%c'.\n", d);
+//     if (res_ft_strrchr1)
+//         printf("ft_strrchr : Derniere occurence '%c': %s\n", d, res_ft_strrchr1);
+//     else
+//         printf("ft_strrchr : Pas de caractere '%c'.\n", d);
+
 // }
 
 //*************************************** MEMCHR **************************************//
 
-// int main()
+// int main() 
 // {
 //     const char str[] = "Pwet Pouet Pwet";
 //     int c = 'o';
 //     size_t n = sizeof(str);
 
-//     char *res = ft_memchr(str, c, n);
 
+//     char *res = ft_memchr(str, c, n);
 //     if (res)
-//         printf("Found '%c' at position: %ld\n", c, res - str);
+//         printf(" '%c' position %ld\n", c, res - str);
 //     else
-//         printf("Character '%c' not found in the string.\n", c);
+//         printf("aucun caractere %c \n", c);
+
+//     char *res1 = memchr(str, c, n);
+//     if (res1)
+//         printf("memchr : '%c' position %ld\n", c, res1 - str);
+//     else
+//         printf("memchr :aucun caractere %c \n", c);
 
 //     return 0;
 // }
@@ -266,29 +336,33 @@
 //     const char str2[] = "Hello, World";
 //     size_t n = 13;
 //     int res = ft_memcmp(str1, str2, n);
+// 	int res1 = memcmp(str1, str2, n);
 
 //     if (res == 0)
+//         printf("Egal\n");
+//     else
+//         printf("Inegal\n");
+
+		
+//     if (res1 == 0)
 //         printf("Egal\n");
 //     else
 //         printf("Inegal\n");
 //     return 0;
 // }
 
-//*************************************** MEMCMP **************************************//
+//*************************************** STRNSTR **************************************//
 
-// int main()
-// {
+// int main() {
 //     const char *haystack = "Pwet, Pouet !";
 //     const char *needle = "et,";
 //     size_t len = 13;
 
 //     char *res = ft_strnstr(haystack, needle, len);
-
 //     if (res)
-//         printf("Found: %s\n", res);
+//         printf("ft_strnstr - trouve: %s\n", res);
 //     else
-//         printf("Not found\n");
-
+//         printf("ft_strnstr - Non trouve\n");
 //     return 0;
 // }
 
@@ -298,34 +372,46 @@
 // int main()
 // {
 //     const char *s1 = "Je test Pwet Pouet Pwet";
-//     const char *s2 = "Je test mon programme";
+//     const char *s2 = "Je tedt mon programme";
 //     size_t n = 6;
 
 //     int res = ft_strncmp(s1, s2, n);
 
 //     if (res == 0)
-//         printf("The first %zu characters are equal.\n", n);
-//     else if (res < 0)
-//         printf("The first %zu characters of '%s' are less than '%s'.\n", n, s1, s2);
+//         printf("les premiers %zu caracteres sont les memes.\n", n);
+// 	else if (res < 0)
+//         printf("les premiers %zu caractes de '%s' sont < a '%s'.\n", n, s1, s2);
 //     else
-//         printf("The first %zu characters of '%s' are greater than '%s'.\n", n, s1, s2);
+// 	{
+//         printf("les premiers %zu caractere de '%s' sont > a '%s'.\n", n, s1, s2);
+// 	}
+	
+// 	int res1 = ft_strncmp(s1, s2, n);
 
-//     return 0;
+// 	if (res1 == 0)
+//         printf("les premiers %zu caracteres sont les memes.\n", n);
+//     else if (res1 < 0)
+//         printf("les premiers %zu caractes de '%s' sont < a '%s'.\n", n, s1, s2);
+//     else
+//         printf("les premiers %zu caractere de '%s' sont > a '%s'.\n", n, s1, s2);
 // }
 
 //*************************************** CALLOC **************************************//
 
-// int main()
-// {
+// int main() {
 //     int *array = ft_calloc(5, sizeof(int));
 
 //     if (array == NULL)
 //         return 1;
-//     for (int i = 0; i < 5; i++)
-//         printf("%d ", array[i]);
-//     printf("\n");
+//     printf("%d %d %d %d %d\n", array[0], array[1], array[2], array[3], array[4]);
 //     free(array);
-//     return 0;
+
+// 	int *array1 = calloc(5, sizeof(int));
+
+// 	if (array1 == NULL)
+//         return 1;
+//     printf("%d %d %d %d %d\n", array1[0], array1[1], array1[2], array1[3], array1[4]);
+// 	free(array1);
 // }
 
 //*************************************** STRDUP **************************************//
@@ -337,10 +423,17 @@
 
 //     if (dup == NULL)
 //         return 1;
-//     printf("Original: %s\n", src);
-//     printf("Duplicate: %s\n", dup);
+//     printf("base : %s\n", src);
+//     printf("Duplique : %s\n", dup);
 //     free(dup);
-//     return 0;
+
+// 	char *dup1 = ft_strdup(src);
+
+// 	if (dup1 == NULL)
+//         return 1;
+//     printf("base : %s\n", src);
+//     printf("Duplique : %s\n", dup1);
+//     free(dup1);
 // }
 
 //*************************************** ATOI ****************************************//
@@ -365,10 +458,9 @@
     
 //     if (sub == NULL)
 //         return 1;
-//     printf("Original: %s\n", s);
-//     printf("Substring: %s\n", sub);
+//     printf("base: %s\n", s);
+//     printf("Sub: %s\n", sub);
 //     free(sub);
-//     return 0;
 // }
 
 //*************************************** STRJOIN *************************************//
