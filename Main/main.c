@@ -6,7 +6,7 @@
 /*   By: calleaum <calleaum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:56:41 by calleaum          #+#    #+#             */
-/*   Updated: 2024/10/29 21:18:08 by calleaum         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:45:14 by calleaum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,10 +547,10 @@
     
 //     if (result == NULL)
 //     {
-//         printf("Memory allocation failed\n");
+//         printf("Allocation echoue\n");
 //         return 1;
 //     }
-//     printf("Transformed string: %s\n", result);
+//     printf("Chaine transformee: %s\n", result);
 //     free(result);
 //     return 0;
 // }
@@ -568,7 +568,7 @@
 //     char str[] = "hello";
 
 //     ft_striteri(str, transform_char);
-//     printf("Transformed string: %s\n", str);
+//     printf("Chaine transformee: %s\n", str);
 //     return 0;
 // }
 
@@ -640,7 +640,7 @@
 //     t_list *node1 = ft_lstnew(&value1);
     
 //     ft_lstadd_front(&list, node1);
-//     printf("List node content: %d\n", *(int *)list->content);
+//     printf("Liste: %d\n", *(int *)list->content);
 //     free(node1);
 //     return 0;
 // }
@@ -659,7 +659,7 @@
 //     node1->next = node2;
 //     list = node1;
 //     int size = ft_lstsize(list);
-//     printf("List size: %d\n", size);
+//     printf("Taille de la liste : %d\n", size);
 //     free(node1);
 //     free(node2); 
 //     return 0;
@@ -672,7 +672,7 @@
 //     t_list *list = NULL;
 //     int value1 = 42;
 //     int value2 = 84;
-//     int value3 = 21;
+//     int value3 = NULL;
 //     t_list *node1 = ft_lstnew(&value1);
 //     t_list *node2 = ft_lstnew(&value2);
 //     t_list *node3 = ft_lstnew(&value3);
@@ -681,11 +681,10 @@
 //     node2->next = node3;
 //     list = node1;
 //     t_list *last = ft_lstlast(list);
-//     if (last != NULL) {
-//         printf("Last element content: %d\n", *(int *)(last->content));
-//     } else {
-//         printf("List is empty.\n");
-//     }
+//     if (last != NULL) 
+//         printf("Dernier element: %d\n", *(int *)(last->content));
+// 	else
+//         printf("Liste vide.\n");
 //     free(node1);
 //     free(node2);
 //     free(node3);
@@ -699,7 +698,7 @@
 //     t_list *list = NULL;
 //     int value1 = 42;
 //     int value2 = 84;
-//     int value3 = 21;
+//     int value3 = 0;
 //     t_list *node1 = ft_lstnew(&value1);
 //     t_list *node2 = ft_lstnew(&value2);
 //     t_list *node3 = ft_lstnew(&value3);
@@ -710,7 +709,7 @@
 //     t_list *current = list;
 //     while (current != NULL)
 //     {
-//         printf("Node content: %d\n", *(int *)(current->content));
+//         printf("contenu: %d\n", *(int *)(current->content));
 //         current = current->next;
 //     }
 //     free(node1);
@@ -732,9 +731,7 @@
 //     *value = 42;
 //     t_list *node = ft_lstnew(value);
 
-
-//     printf("Before deletion: %d\n", *(int *)(node->content));
-
+//     printf("avant suppression: %d\n", *(int *)(node->content));
 
 //     ft_lstdelone(node, del_content);
 
@@ -748,7 +745,6 @@
 // }
 
 // int main() {
-//     // Création de quelques nœuds de liste
 //     int *value1 = malloc(sizeof(int));
 //     int *value2 = malloc(sizeof(int));
     
@@ -757,17 +753,12 @@
 //     t_list *node1 = ft_lstnew(value1);
 //     t_list *node2 = ft_lstnew(value2);
 //     node1->next = node2;
-//     printf("Before clear:\n");
-//     printf("Node 1 content: %d\n", *(int *)(node1->content));
-//     printf("Node 2 content: %d\n", *(int *)(node2->content));
+//     printf("contenu Node 1: %d\n", *(int *)(node1->content));
+//     printf("contenu Node 2: %d\n", *(int *)(node2->content));
 //     t_list *head = node1;
 //     ft_lstclear(&head, del_content);
-//     if (head == NULL) {
-//         printf("After clear: List is empty.\n");
-//     } else {
-//         printf("List still has nodes.\n");
-//     }
-//     return 0;
+//     if (head == NULL) 
+//         printf("Apres clear: Liste vide.\n");
 // }
 
 //*************************************** FT_LSTITER **********************************//
@@ -781,16 +772,16 @@
 //     int *value1 = malloc(sizeof(int));
 //     int *value2 = malloc(sizeof(int));
 //     int *value3 = malloc(sizeof(int));
-//     *value1 = 42;
-//     *value2 = 84;
-//     *value3 = 21;
+//     *value1 = 4242;
+//     *value2 = 8484;
+//     *value3 = 168168;
 //     t_list *node1 = ft_lstnew(value1);
 //     t_list *node2 = ft_lstnew(value2);
 //     t_list *node3 = ft_lstnew(value3);
 
 //     node1->next = node2;
 //     node2->next = node3;
-//     printf("Contents of the list:\n");
+
 //     ft_lstiter(node1, print_content);
 //     free(value1);
 //     free(value2);
@@ -798,17 +789,16 @@
 //     free(node1);
 //     free(node2);
 //     free(node3);
-//     return 0;
 // }
 
 //*************************************** FT_LSTMAP ***********************************//
 
-// void *double_content(void *content) 
+// void *ten_content(void *content) 
 // {
 //     int *new_content = malloc(sizeof(int));
 //     if (new_content) 
 //     {
-//         *new_content = (*(int *)content) * 2;
+//         *new_content = (*(int *)content) * 10;
 //     }
 //     return new_content;
 // }
@@ -831,9 +821,9 @@
 //     t_list *node3 = ft_lstnew(value3);
 //     node1->next = node2;
 //     node2->next = node3;
-//     t_list *new_list = ft_lstmap(node1, double_content, free_content);
+//     t_list *new_list = ft_lstmap(node1, ten_content, free_content);
 
-//     printf("Contents of the new list after mapping:\n");
+//     printf("Nouvelle liste apres lstmapi:\n");
 //     t_list *current = new_list;
 //     while (current) 
 //     {
